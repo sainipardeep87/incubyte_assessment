@@ -13,8 +13,12 @@ RSpec.describe StringCalculator do
             expect(calculator.add("2,1")).to eq(3)
         end
 
-        it 'it should return error if negetive number is given' do 
+        it ' should return error if negetive number is given' do 
             expect(calculator.add("2,-1")).to eq('Negative number -1 is not supported')
+        end
+
+        it 'should return sum of numbers if new line delimeter is given' do 
+            expect(calculator.add("1\n2\n3")).to eq(6)
         end
     end
 end
