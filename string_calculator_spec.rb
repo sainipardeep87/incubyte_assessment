@@ -20,5 +20,13 @@ RSpec.describe StringCalculator do
         it 'should return sum of numbers if new line delimeter is given' do 
             expect(calculator.add("1\n2\n3")).to eq(6)
         end
+
+        it 'should return handle different delimeters and return expected results' do 
+            expect(calculator.add("//:1:2\n3")).to eq(6)
+        end
+
+        it 'should skip numbers greated then 1000' do 
+            expect(calculator.add("1,2,3,4,1003")).to eq(10)
+        end
     end
 end
